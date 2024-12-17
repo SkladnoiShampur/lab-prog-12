@@ -1,0 +1,33 @@
+#include <iostream>
+#include <string>
+
+struct Gold {
+    std::string country;   // Страна-производитель
+    std::string color;     // Цвет золота
+    float purity;          // Проба 
+    float price_per_gram;  // Цена золота за 1 грамм
+};
+
+int main() {
+    Gold gold;
+
+    std::cout << "Введите страну-производитель: \n";
+    std::getline(std::cin, gold.country);
+    
+    std::cout << "Введите цвет золота: \n";
+    std::getline(std::cin, gold.color);
+    
+    std::cout << "Введите пробу: \n";
+    std::cin >> gold.purity;
+    
+    std::cout << "Введите цену золота за 1 грамм: \n";
+    std::cin >> gold.price_per_gram;
+
+    std::cout << "\nДанные о золоте:\n";
+    std::cout << "Страна-производитель: " << gold.country << "\n";
+    std::cout << "Цвет золота: " << gold.color << "\n";
+    std::cout << "Проба: " << gold.purity << "\n";
+    std::cout << "Цена за 1 грамм: " << gold.price_per_gram << " руб.\n";
+
+    return 0;
+}

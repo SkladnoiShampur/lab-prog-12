@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include <string.h>
+
+#define MAX_NAME_LENGTH 100
+
+
+struct Country {
+    char name[MAX_NAME_LENGTH];  // Название страны
+    int num_large_cities;        // Количество крупных городов
+    int num_rivers;              // Количество рек
+    float population_density;     // Плотность населения
+};
+
+int main() {
+    struct Country country;
+
+    printf("Введите название страны: \n");
+    fgets(country.name, MAX_NAME_LENGTH, stdin);
+    country.name[strcspn(country.name, "\n")] = '0'; 
+
+    printf("Введите количество крупных городов: \n");
+    scanf("%d", &country.num_large_cities);
+
+    printf("Введите количество рек: \n");
+    scanf("%d", &country.num_rivers);
+
+    printf("Введите плотность населения (ч/км^2): \n");
+    scanf("%f", &country.population_density);
+
+    printf("\nДанные о стране:\n");
+    printf("Название страны: %s\n", country.name);
+    printf("Количество крупных городов: %d\n", country.num_large_cities);
+    printf("Количество рек: %d\n", country.num_rivers);
+    printf("Плотность населения: %.2f ч/км^2\n", country.population_density);
+
+    return 0;
+}
